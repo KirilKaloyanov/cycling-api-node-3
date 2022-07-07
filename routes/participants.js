@@ -25,6 +25,7 @@ router.post("/", async (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       organisation: req.body.organisation,
+      phone: req.body.phone,
     });
     participant = await participant.save();
     res.send(participant._id);
