@@ -6,7 +6,7 @@ const participantSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true },
   organisation: { type: String, required: true },
-  phone: { type: String, required: false },
+  phone: { type: String },
 });
 
 const Participant = mongoose.model("Participant", participantSchema);
