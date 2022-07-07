@@ -6,6 +6,7 @@ const participantSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true },
   organisation: { type: String, required: true },
+  phone: { type: String, required: false },
 });
 
 const Participant = mongoose.model("Participant", participantSchema);
@@ -15,6 +16,7 @@ const schema = Joi.object({
   lastName: Joi.string().required(),
   email: Joi.string().email().required(),
   organisation: Joi.string().required(),
+  phone: Joi.string(),
 });
 
 function validateParticipant(participant) {
