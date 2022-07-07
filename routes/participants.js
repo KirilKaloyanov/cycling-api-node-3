@@ -5,7 +5,6 @@ const { Participant, validateParticipant } = require("../models/participant");
 router.post("/", async (req, res) => {
   const { error } = validateParticipant(req.body);
   if (error && error.details[0].path[0] !== "phone") {
-    console.log(error.details[0].path[0]);
     const ex = { errors: {} };
     for (let item of error.details) {
       ex.errors[item.path[0]] = item.message;
